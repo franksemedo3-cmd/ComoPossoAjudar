@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como posso te ajudar?</title>
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/app.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>Como posso te ajudar?</h1>
+        <p>Um só lugar. Muitas soluções. Para todos.</p>
+    </header>
+
+    <main>
+        <label for="pesquisa">O que procuras hoje?</label>
+        <input id="pesquisa" type="search"
+               placeholder="Pesquisar um serviço...">
+
+        <section class="servicos" id="servicos">
+            <button class="servico" data-nome="educação">
+                📚 <span>Educação</span>
+            </button>
+            <button class="servico" data-nome="emprego">
+                💼 <span>Emprego</span>
+            </button>
+            <button class="servico" data-nome="saúde">
+                ❤️ <span>Saúde</span>
+            </button>
+            <button class="servico" data-nome="finanças">
+                💰 <span>Finanças</span>
+            </button>
+            <button class="servico" data-nome="agricultura">
+                🌱 <span>Agricultura</span>
+            </button>
+            <button class="servico" data-nome="comunidade">
+                🤝 <span>Comunidade</span>
+            </button>
+            <button class="servico" data-nome="transportes">
+                🚗 <span>Transportes</span>
+            </button>
+            <button class="servico" data-nome="tarefas">
+                📅 <span>Minhas tarefas</span>
+            </button>
+        </section>
+
+        <p id="mensagem" role="status">
+            Escolhe um serviço para começar.
+        </p>
+    </main>
+
+    <footer>
+        <p>Como posso te ajudar? — A tua vida, mais simples.</p>
+    </footer>
+</body>
+</html>
