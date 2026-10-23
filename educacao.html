@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação | Como posso te ajudar?</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #12304a;
+        }
+
+        header {
+            background: #12304a;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 14px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 25px auto;
+        }
+
+        .opcoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 20px 10px;
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            color: #12304a;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e0f2fe;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 18px;
+            background: white;
+            border-radius: 12px;
+            line-height: 1.7;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #075985;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 Educação</h1>
+        <p>Aprende ao teu ritmo, mesmo sem internet.</p>
+    </header>
+
+    <main>
+        <h2>O que queres estudar?</h2>
+
+        <div class="opcoes">
+            <button onclick="mostrar('matematica')">
+                🧮 Matemática
+            </button>
+
+            <button onclick="mostrar('portugues')">
+                📝 Português
+            </button>
+
+            <button onclick="mostrar('informatica')">
+                💻 Informática
+            </button>
+
+            <button onclick="mostrar('exercicios')">
+                ✏️ Exercícios
+            </button>
+        </div>
+
+        <section id="resultado" aria-live="polite">
+            Escolhe uma opção para começar a aprender.
+        </section>
+
+        <a href="../index.html">← Voltar à página inicial</a>
+    </main>
+
+    <script>
+        function mostrar(opcao) {
+            const resultado = document.getElementById("resultado");
+
+            const conteudos = {
+                matematica: `
+                    <h2>Matemática</h2>
+                    <p>Começa por estes assuntos:</p>
+                    <ul>
+                        <li>Operações básicas</li>
+                        <li>Frações</li>
+                        <li>Equações</li>
+                        <li>Funções matemáticas</li>
+                    </ul>
+                    <p>Escolhe um assunto e pratica regularmente.</p>
+                `,
+
+                portugues: `
+                    <h2>Português</h2>
+                    <ul>
+                        <li>Gramática</li>
+                        <li>Ortografia</li>
+                        <li>Leitura e interpretação</li>
+                        <li>Escrita de textos</li>
+                    </ul>
+                `,
+
+                informatica: `
+                    <h2>Informática</h2>
+                    <ul>
+                        <li>Componentes do computador</li>
+                        <li>Algoritmos</li>
+                        <li>Programação</li>
+                        <li>HTML, CSS e JavaScript</li>
+                    </ul>
+                `,
+
+                exercicios: `
+                    
+<h2>Exercícios de Matemática</h2>
+
+<h3>Exercício 1 — Equação simples</h3>
+<p>Resolve: <strong>x + 5 = 12</strong></p>
+<p>Qual é o valor de x?</p>
+<input id="resposta1" type="number" placeholder="A tua resposta">
+<button onclick="verificar1()">Verificar</button>
+<p id="correcao1"></p>
+
+<hr>
+
+<h3>Exercício 2 — Multiplicação</h3>
+<p>Resolve: <strong>3 × x = 18</strong></p>
+<p>Qual é o valor de x?</p>
+<input id="resposta2" type="number" placeholder="A tua resposta">
+<button onclick="verificar2()">Verificar</button>
+<p id="correcao2"></p>
+
+<hr>
+
+<h3>Exercício 3 — Adição</h3>
+<p>Resolve: <strong>x + 8 = 20</strong></p>
+<p>Qual é o valor de x?</p>
+<input id="resposta3" type="number" placeholder="A tua resposta">
+<button onclick="verificar3()">Verificar</button>
+<p id="correcao3"></p>
+
+                `
+            };
+
+            resultado.innerHTML = conteudos[opcao];
+        }
+
+function verificar1() {
+    const resposta = document.getElementById("resposta1").value;
+    const correcao = document.getElementById("correcao1");
+
+    if (resposta.trim() === "") {
+        correcao.textContent = "Escreve uma resposta primeiro.";
+    } else if (Number(resposta) === 7) {
+        correcao.textContent = "Correto! x = 12 - 5 = 7. Muito bem!";
+    } else {
+        correcao.textContent = "Tenta novamente. Subtrai 5 aos dois lados.";
+    }
+}
+
+function verificar2() {
+    const resposta = document.getElementById("resposta2").value;
+    const correcao = document.getElementById("correcao2");
+
+    if (resposta.trim() === "") {
+        correcao.textContent = "Escreve uma resposta primeiro.";
+    } else if (Number(resposta) === 6) {
+        correcao.textContent = "Correto! x = 18 ÷ 3 = 6. Muito bem!";
+    } else {
+        correcao.textContent = "Tenta novamente. Divide 18 por 3.";
+    }
+}
+
+function verificar3() {
+    const resposta = document.getElementById("resposta3").value;
+    const correcao = document.getElementById("correcao3");
+
+    if (resposta.trim() === "") {
+        correcao.textContent = "Escreve uma resposta primeiro.";
+    } else if (Number(resposta) === 12) {
+        correcao.textContent = "Correto! x = 20 - 8 = 12. Muito bem!";
+    } else {
+        correcao.textContent = "Tenta novamente. Subtrai 8 aos dois lados.";
+    }
+}
+
+    </script>
+        
+</body>
+</html>
